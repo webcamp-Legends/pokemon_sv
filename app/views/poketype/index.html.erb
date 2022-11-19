@@ -1,0 +1,9 @@
+<h1>Poketype#index</h1>
+<p>Find me in app/views/poketype/index.html.erb</p>
+
+<%= form_with url: poketype_index_path, mathod: :get, local: true do |f| %>
+  <%= f.select :poketype, [['ほのお': 1], ['みず': 3], ['でんき': 4], ['くさ': 5], ['こおり': 6], ['かくとう': 7]], { include_blank: true, selected: 1 } %>
+  <%= f.submit "選択" %>
+ 
+<% end %>
+
