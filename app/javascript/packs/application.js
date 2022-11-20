@@ -7,7 +7,21 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import "../stylesheets/application"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+$(document).on('turbolinks:load', function() {
+  const select = document.querySelector("#select")
+select.addEventListener("change", () => {
+  const b = document.querySelector(".b")
+  if (select.value === "B") {
+    b.style.visibility = "visible"
+  } else {
+    b.style.visibility = "hidden"  
+  }
+})
+
+});
