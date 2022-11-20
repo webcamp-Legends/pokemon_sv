@@ -1,9 +1,20 @@
-<h1>Poketype#index</h1>
-<p>Find me in app/views/poketype/index.html.erb</p>
+<select id="select">
+  <option value="A">A</option>
+  <option value="B">B</option>
+</select>
 
-<%= form_with url: poketype_index_path, mathod: :get, local: true do |f| %>
-  <%= f.select :poketype, [['ほのお': 1], ['みず': 3], ['でんき': 4], ['くさ': 5], ['こおり': 6], ['かくとう': 7]], { include_blank: true, selected: 1 } %>
-  <%= f.submit "選択" %>
- 
-<% end %>
+<div class="b">
+  B が選択されました
+</div>
 
+<script>
+const select = document.querySelector("#select")
+select.addEventListener("change", () => {
+  const b = document.querySelector(".b")
+  if (select.value === "B") {
+    b.style.visibility = "visible"
+  } else {
+    b.style.visibility = "hidden"  
+  }
+})
+</script>
